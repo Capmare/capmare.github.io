@@ -159,16 +159,15 @@ h1 {
 .about-seeking i { color: var(--accent2); font-size: .65rem; flex-shrink: 0; animation: pulse 1.8s ease-in-out infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 .about-langs {
-  display: flex; flex-wrap: wrap; gap: .6rem;
   margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);
 }
-.lang-pill {
-  font-family: var(--fm); font-size: .75rem;
-  padding: .35rem .85rem; border-radius: 100px;
-  background: rgba(124,58,237,.08); border: 1px solid rgba(124,58,237,.2);
-  color: var(--text); display: flex; align-items: center; gap: .5rem;
+.lang-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .55rem 0; border-bottom: 1px solid var(--border);
 }
-.lang-level { color: var(--muted); font-size: .7rem; }
+.lang-row:last-child { border-bottom: none; }
+.lang-name { font-size: .88rem; color: var(--text); }
+.lang-level { font-family: var(--fm); font-size: .72rem; color: var(--muted); }
 
 /* ── PROJECTS ────────────────────────────── */
 .embeds-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2.5rem; }
