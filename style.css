@@ -158,16 +158,6 @@ h1 {
 }
 .about-seeking i { color: var(--accent2); font-size: .65rem; flex-shrink: 0; animation: pulse 1.8s ease-in-out infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
-.about-langs {
-  margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);
-}
-.lang-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: .55rem 0; border-bottom: 1px solid var(--border);
-}
-.lang-row:last-child { border-bottom: none; }
-.lang-name { font-size: .88rem; color: var(--text); }
-.lang-level { font-family: var(--fm); font-size: .72rem; color: var(--muted); }
 
 /* ── PROJECTS ────────────────────────────── */
 .embeds-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2.5rem; }
@@ -267,6 +257,7 @@ h1 {
 }
 .skill-col li:hover { border-color: rgba(124,58,237,.4); color: var(--text); }
 .skill-col li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.skill-note { margin-left: auto; font-family: var(--fm); font-size: .68rem; color: var(--muted); }
 
 /* ── EXPERIENCE ──────────────────────────── */
 .xp-list { display: flex; flex-direction: column; }
