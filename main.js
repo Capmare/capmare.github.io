@@ -1,98 +1,64 @@
-// ── NAV scroll effect
+// Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+}, { passive: true });
 
-// ── Reveal on scroll
+// Reveal on scroll
 const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      observer.unobserve(entry.target);
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
+}, { threshold: 0.08 });
+reveals.forEach(el => io.observe(el));
 
-// ── Video play/pause on click
-document.querySelectorAll('.video-wrapper').forEach(wrapper => {
-  const video = wrapper.querySelector('video');
-  const card = wrapper.closest('.video-card');
-
-  wrapper.addEventListener('click', () => {
-    if (video.paused) {
-      // Pause all other videos
-      document.querySelectorAll('.video-wrapper video').forEach(v => {
-        if (v !== video) { v.pause(); v.closest('.video-card').classList.remove('playing'); }
-      });
-      video.play();
-      card.classList.add('playing');
-    } else {
-      video.pause();
-      card.classList.remove('playing');
-    }
-  });
-});
-
-// ── Hero particle canvas
+// Hero particle canvas
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas.getContext('2d');
-let W, H, particles;
+let W, H, pts;
 
-function resize() {
+const resize = () => {
   W = canvas.width = canvas.offsetWidth;
   H = canvas.height = canvas.offsetHeight;
-}
-
-function initParticles() {
-  particles = Array.from({ length: 80 }, () => ({
-    x: Math.random() * W,
-    y: Math.random() * H,
-    vx: (Math.random() - 0.5) * 0.3,
-    vy: (Math.random() - 0.5) * 0.3,
-    r: Math.random() * 1.5 + 0.5,
+  pts = Array.from({ length: 60 }, () => ({
+    x: Math.random() * W, y: Math.random() * H,
+    vx: (Math.random() - .5) * .25,
+    vy: (Math.random() - .5) * .25,
+    r: Math.random() * 1.2 + .4,
   }));
-}
+};
 
-function drawParticles() {
+const draw = () => {
   ctx.clearRect(0, 0, W, H);
-
-  // Draw connections
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 130) {
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(124,58,237,${0.15 * (1 - dist / 120)})`;
-        ctx.lineWidth = 0.5;
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(124,58,237,${.12 * (1 - d / 130)})`;
+        ctx.lineWidth = .6;
+        ctx.moveTo(pts[i].x, pts[i].y);
+        ctx.lineTo(pts[j].x, pts[j].y);
         ctx.stroke();
       }
     }
-  }
-
-  // Draw dots
-  particles.forEach(p => {
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(168,85,247,0.6)';
+    ctx.arc(pts[i].x, pts[i].y, pts[i].r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(167,139,250,0.5)';
     ctx.fill();
+    pts[i].x += pts[i].vx;
+    pts[i].y += pts[i].vy;
+    if (pts[i].x < 0 || pts[i].x > W) pts[i].vx *= -1;
+    if (pts[i].y < 0 || pts[i].y > H) pts[i].vy *= -1;
+  }
+  requestAnimationFrame(draw);
+};
 
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x < 0 || p.x > W) p.vx *= -1;
-    if (p.y < 0 || p.y > H) p.vy *= -1;
-  });
-
-  requestAnimationFrame(drawParticles);
-}
-
-window.addEventListener('resize', () => { resize(); initParticles(); });
+window.addEventListener('resize', resize);
 resize();
-initParticles();
-drawParticles();
+draw();
