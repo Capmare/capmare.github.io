@@ -126,6 +126,15 @@ h1 {
   font-weight: 700; line-height: 1.1; letter-spacing: -.03em;
 }
 .about-right p { color: var(--muted); margin-bottom: 1.25rem; font-size: .93rem; line-height: 1.9; }
+.about-seeking {
+  display: flex; align-items: center; gap: .75rem;
+  margin: 1.5rem 0; padding: .9rem 1.25rem;
+  background: rgba(124,58,237,.08);
+  border: 1px solid rgba(124,58,237,.25);
+  border-radius: 7px; font-size: .88rem; color: var(--text);
+}
+.about-seeking i { color: var(--accent2); font-size: .65rem; flex-shrink: 0; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 .about-nums {
   display: flex; gap: 3rem; margin-top: 2.5rem;
   padding-top: 2.5rem; border-top: 1px solid var(--border);
