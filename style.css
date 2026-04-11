@@ -266,6 +266,9 @@ h1 {
 }
 .jam-card:hover::before { opacity: 1; }
 .jam-num { font-family: var(--fm); font-size: .68rem; color: var(--accent4); letter-spacing: .1em; }
+.jam-studio { font-size: .75rem; color: var(--muted); font-weight: 400; }
+.jam-video { margin: .75rem 0; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; aspect-ratio: 16/9; }
+.jam-video iframe { width: 100%; height: 100%; display: block; border: 0; }
 .jam-card h3 { font-family: var(--fh); font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em; }
 .jam-card p { font-size: .82rem; color: var(--muted); line-height: 1.75; flex: 1; }
 .jam-role { font-family: var(--fm); font-size: .65rem; color: var(--accent5); letter-spacing: .06em; }
