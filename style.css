@@ -233,7 +233,7 @@ h1 {
   border-radius: 1px; color: var(--muted);
 }
 .linkedin-frame { flex: 1; }
-.linkedin-frame iframe { width: 100%; display: block; border: 0; min-height: 380px; filter: invert(1) hue-rotate(180deg); }
+.linkedin-frame iframe { width: 100%; display: block; border: 0; min-height: 380px; }
 .embed-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); }
 .proj-link {
   font-family: var(--fm); font-size: .75rem; color: var(--accent);
