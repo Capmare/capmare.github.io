@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - David Nicusor Capmare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .header .contact-info {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .header a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 6px;
+        }
+
+        .entry {
+            margin-bottom: 16px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .entry-subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .entry-content {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 4px;
+            color: #555;
+        }
+
+        .entry-content ul {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 4px;
+        }
+
+        .entry-content li {
+            margin-left: 16px;
+            margin-bottom: 3px;
+        }
+
+        .entry-content li:before {
+            content: "• ";
+            margin-left: -16px;
+            margin-right: 8px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .skill-category {
+            margin-bottom: 8px;
+        }
+
+        .skill-category strong {
+            display: block;
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+            .header {
+                page-break-after: avoid;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DAVID NICUSOR CAPMARE</h1>
+            <div class="contact-info">
+                Belgium • +32 469 620 977 • capmare.david@gmail.com • <a href="https://linkedin.com">LinkedIn</a> • <a href="https://capmare.github.io/">Portfolio</a>
+                <div style="margin-top: 8px;">
+                    Date of birth: 23/03/2003 • Nationality: Romanian, Belgian
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SUMMARY</div>
+            <div class="entry-content">
+                Aspiring game developer currently studying Game Development at DAE in Kortrijk. Passionate about game programming, 3D graphics, and combat mechanics. Seeking to leverage technical skills and creative abilities in a challenging game development role. Currently working as Financial Software Developer at vFinance, bringing strong real-time performance optimization and C++ expertise into game development work.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">WORK EXPERIENCE</div>
+
+            <div class="entry">
+                <div class="entry-title">Financial Software Developer – vFinance, 2026 – Current</div>
+                <div class="entry-content">
+                    Developing financial software with C++20, Qt (Widgets + QML), building reusable UI components, optimizing and profiling software, implementing multithreading workflows, and maintaining unit tests.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Mentorship – AuTArG Studios (Project Nomads) – Remote, 2024 – 2025</div>
+                <div class="entry-content">
+                    Learning from a mentor while developing AI systems and custom magic systems for Project Nomads. Focused on game design architecture and technical implementation of complex gameplay systems.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SIDE PROJECTS</div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">Fluid Simulation</a> – Real-time fluid dynamics simulation in Unreal Engine + Real-Time fluid dynamics with CUDA</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">LocklessLib</a> – Header-only lock-free SPSC/MPSC/MPMC ring buffers in C++23</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">Unreal Engine Custom Magic Sense</a> – Advanced magic system implementation in Unreal</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">Modern Vulkan Rasterizer</a> – Custom rasterization pipeline using modern Vulkan</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">TurnBased RPG Template</a> – Complete RPG framework with turn-based combat</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">DirectX12 Renderer</a> – Low-level graphics rendering engine using DirectX 12 with modern C++</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PROJECTS & GAME JAMS</div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">Happy Volcano</a> – C++ Gameplay Programmer (End of Year University Project, 2025-2026)</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Designed and implemented core gameplay mechanics</li>
+                        <li>Profiled and optimized real-time performance</li>
+                        <li>Integrated audio and visual systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">Kidults</a> – Lead Developer / Gameplay Programmer</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Coded procedural movement in Unreal Engine</li>
+                        <li>Worked with Chaos Physics System for cloth simulation</li>
+                        <li>Designed gameplay loop and AI NPC systems with vertex animation and multiple states</li>
+                        <li>Created world-building tools to assist artists</li>
+                        <li>Programmed UI systems and 2-controller local co-op setup</li>
+                        <li>Mentored other programmers on Unreal Engine</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">SoulStorm</a> – Lead Developer (1 Week Game Jam)</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Designed and programmed main game mechanics: wall run, wall climb, wall jump</li>
+                        <li>Implemented sound and music</li>
+                        <li>Communicated and collaborated with sound artists, animators, and level designers</li>
+                        <li>Guided 2nd programmer and assigned team tasks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title"><a href="#">The Librarian</a> – Lead Developer (1 Month Game Jam)</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Taught students Unreal Engine environment and gameplay mechanics implementation</li>
+                        <li>Guided development of animations, point-and-click movement, and puzzle mechanics</li>
+                        <li>Communicated with UI/UX artists and game designers for optimal development</li>
+                        <li>Managed tasks for UI/UX designers, 2 programmers, and 3D artists</li>
+                        <li>Implemented sound systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">EDUCATION</div>
+            <div class="entry">
+                <div class="entry-title">Game Development – HOWEST Digital Arts and Entertainment, Belgium, 2023-2026</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SKILLS</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Programming Languages:</strong>
+                    C++20/26, Unreal Engine, C/Arduino, Python, C#
+                </div>
+                <div class="skill-category">
+                    <strong>Graphics & Frameworks:</strong>
+                    Vulkan, DirectX9/11/12, CUDA, CMake, SimdJSON, JSONCpp, NlohmannJSON
+                </div>
+                <div class="skill-category">
+                    <strong>Tools & Technologies:</strong>
+                    Unreal Engine 5, Jira, Git, SIMD optimization, Lock-free programming
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">LANGUAGES</div>
+            <div class="entry-content">
+                Romanian: Native • Spanish: Native • English: Advanced • Dutch: Advanced
+            </div>
+        </div>
+    </div>
+</body>
+</html>
